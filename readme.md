@@ -1,3 +1,3 @@
-# 👷 Cute Engineering Dummy Library
+# 👷 Cute Engineering C++ Standard Library
 
-A library to be used as a template for new libraries.
+The ISO C++ Standard Library, ISO/IEC 14882

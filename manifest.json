@@ -1,8 +1,8 @@
 {
     "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.component.v1",
-    "id": "ce-dummy",
+    "id": "ce-stdcpp",
     "type": "lib",
-    "description": "Cute Engineering Dummy Library",
+    "description": "The ISO C++ Standard Library, ISO/IEC 14882",
     "props": {
         "cpp-root-include": true
     }
