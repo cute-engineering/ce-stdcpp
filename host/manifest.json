@@ -1,14 +1,11 @@
 {
     "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.component.v1",
-    "id": "ce-stdcpp",
+    "id": "ce-stdcpp-host",
     "type": "lib",
-    "description": "The ISO C++ Standard Library, ISO/IEC 14882",
-    "props": {
-        "cpp-root-include": true
-    },
+    "description": "Placeholder for the host stdcpp library",
     "enableIf": {
         "host": [
-            false
+            true
         ]
     },
     "provides": [
