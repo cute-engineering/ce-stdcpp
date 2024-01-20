@@ -1,0 +1,63 @@
+#pragma once
+
+namespace std {
+
+template <typename T> inline constexpr bool is_array_v = __is_array(T);
+
+/* --- Remove Reference --- */
+
+template <typename T> struct remove_reference {
+  using type = T;
+};
+
+template <typename T> struct remove_reference<T &> {
+  using type = T;
+};
+
+template <typename T> struct remove_reference<T &&> {
+  using type = T;
+};
+
+template <typename T>
+using remove_reference_t = typename remove_reference<T>::type;
+
+/* --- Remove Const --- */
+
+template <typename T> struct remove_const {
+  using type = T;
+};
+
+template <typename T> struct remove_const<T const> {
+  using type = T;
+};
+
+template <typename T> using remove_const_t = typename remove_const<T>::type;
+
+/* --- Remove Volatile --- */
+
+template <typename T> struct remove_volatile {
+  using type = T;
+};
+
+template <typename T> struct remove_volatile<T volatile> {
+  using type = T;
+};
+
+template <typename T>
+using remove_volatile_t = typename remove_volatile<T>::type;
+
+/* --- Remove CVR --- */
+
+template <typename T> struct remove_cv {
+  using type = remove_volatile_t<remove_const_t<T>>;
+};
+
+template <typename T> using remove_cv_t = typename remove_cv<T>::type;
+
+template <typename T> struct remove_cvref {
+  using type = remove_cv_t<remove_reference_t<T>>;
+};
+
+template <typename T> using remove_cvref_t = typename remove_cvref<T>::type;
+
+} // namespace std
