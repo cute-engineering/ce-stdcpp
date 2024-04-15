@@ -53,6 +53,10 @@ struct partial_ordering {
     return v._value <= 0;
   }
 
+  friend bool operator==(partial_ordering v, partial_ordering w) {
+    return v._value == w._value;
+  }
+
 private:
   int _value;
 };
@@ -89,6 +93,10 @@ struct weak_ordering {
   friend bool operator<=(nullptr_t, weak_ordering v) { return 0 <= v._value; }
   friend bool operator>(nullptr_t, weak_ordering v) { return 0 > v._value; }
   friend bool operator>=(nullptr_t, weak_ordering v) { return 0 >= v._value; }
+
+  friend bool operator==(weak_ordering v, weak_ordering w) {
+    return v._value == w._value;
+  }
 
 private:
   int _value;
@@ -129,6 +137,10 @@ struct strong_ordering {
   friend bool operator<=(nullptr_t, strong_ordering v) { return 0 <= v._value; }
   friend bool operator>(nullptr_t, strong_ordering v) { return 0 > v._value; }
   friend bool operator>=(nullptr_t, strong_ordering v) { return 0 >= v._value; }
+
+  friend bool operator==(strong_ordering v, strong_ordering w) {
+    return v._value == w._value;
+  }
 
 private:
   int _value;
