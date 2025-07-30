@@ -4,6 +4,7 @@
 
 namespace std {
 
+using ::size_t;
 using nullptr_t = decltype(nullptr);
 
 } // namespace std
